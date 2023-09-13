@@ -1,12 +1,85 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import headerOne from "../img/headerT.png";
+import headerTwo from "../img/headerO.png";
+
+
+import profile from "../img/profile.jpg";
 ---
 
 <Layout title="Welcome to Sofia.">
+  <header>
+    <div class="parentDiv">
+      <Image src={headerTwo} alt="header" />
+      <Image src={headerOne} alt="header" />
+    </div>
 
-	<!-- HTML GOES IN HERE -->
+    <div class="headerDiv">
+      <div class="avatar"><Image src={profile} alt="profile" /></div>
+	 <div class="textContentHeaderDiv"> <p>S O F I A  </p> 
+	<p>A N D E R S E N</p></div>
+    </div>
+  </header>
+  <!-- HTML GOES IN HERE -->
 </Layout>
 
-<style>
+<style lang="css">
+  .parentDiv {
+    height: 341px;
+  }
 
+  header {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .headerDiv {
+    width: 100%;
+	height: 200px;
+    background-color: #e7d6bc;
+	position: relative;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    position: relative;
+	margin: 0 auto;
+	margin-top: -150px;
+	border: 2px solid white;
+	  
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+	position: absolute;
+  }
+
+  .textContentHeaderDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+  }
+
+  .textContentHeaderDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-content: space-between;
+	font-family: 'Galindo';
+	letter-spacing: 5px;
+	font-weight: bold;
+  }
+  
+
+  @import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap'); /* font-family: 'Galindo', cursive; */
+  
 </style>
