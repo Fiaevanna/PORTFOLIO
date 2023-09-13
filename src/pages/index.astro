@@ -3,9 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import headerOne from "../img/headerT.png";
 import headerTwo from "../img/headerO.png";
-
-
 import profile from "../img/profile.jpg";
+import Icon from "../components/Icons.astro";
+import { ScrollText, Github, Linkedin } from "lucide";
+import cardOne from "../img/cardOne.png";
 ---
 
 <Layout title="Welcome to Sofia.">
@@ -17,20 +18,49 @@ import profile from "../img/profile.jpg";
 
     <div class="headerDiv">
       <div class="avatar"><Image src={profile} alt="profile" /></div>
-	 <div class="textContentHeaderDiv"> <p>S O F I A  </p> 
-	<p>A N D E R S E N</p></div>
+      <div class="textContentHeaderDiv">
+        <div class="nameStyle"><p>SOFIA ANDERSEN</p></div>
+        <p class="frontText">FRONTEND DEVELOPER</p>
+        <div class="linkContent">
+          <a href=""><Icon icon={Linkedin} /><span>LinkedIn</span></a>
+          <a href=""><Icon icon={Github} /><span>Github</span></a>
+          <a href=""><Icon icon={ScrollText} /><span>Resume</span></a>
+        </div>
+      </div>
     </div>
   </header>
-  <!-- HTML GOES IN HERE -->
 </Layout>
+<article>
+  <p>Hello!</p>
+  <p>I'm Sofia, a passionate Frontend Development student at Nackademin.</p>
+  <p>
+    I enjoy creating beautiful and user-friendly web interfaces that engage and
+    simplify the user experience. What excites me most about Frontend is the
+    ability to transform creative ideas into reality.
+  </p>
+  <p>
+    This website is my digital home, here you can find information about me and
+    also some of my projects!
+  </p>
+</article>
+
+<section>
+  <div class="card"><Image src={cardOne} alt="cardOne" /></div>
+</section>
+<!-- HTML GOES IN HERE -->
 
 <style lang="css">
   .parentDiv {
     height: 341px;
   }
 
+  .parentDiv img {
+    width: 50%;
+    object-fit: cover;
+  }
+
   header {
-    width: 1000px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -38,9 +68,9 @@ import profile from "../img/profile.jpg";
 
   .headerDiv {
     width: 100%;
-	height: 200px;
     background-color: #e7d6bc;
-	position: relative;
+    position: relative;
+    padding-bottom: 20px;
   }
 
   .avatar {
@@ -49,37 +79,76 @@ import profile from "../img/profile.jpg";
     width: 200px;
     height: 200px;
     position: relative;
-	margin: 0 auto;
-	margin-top: -150px;
-	border: 2px solid white;
-	  
+    margin: 0 auto;
+    margin-top: -150px;
+    border: 2px solid white;
   }
 
   .avatar img {
     width: 100%;
     height: 100%;
-	position: absolute;
+    position: absolute;
   }
 
   .textContentHeaderDiv {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Galindo", cursive;
+    font-weight: bold;
+    color: #33371f;
   }
 
-  .textContentHeaderDiv {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	justify-content: space-between;
-	font-family: 'Galindo';
-	letter-spacing: 5px;
-	font-weight: bold;
+  h1 {
+    color: #33371f;
   }
-  
 
-  @import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap'); /* font-family: 'Galindo', cursive; */
-  
+  .nameStyle {
+    display: flex;
+    font-size: 20px;
+  }
+
+  .nameStyle p {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  .frontText {
+    font-size: 30px;
+    margin-top: 5px;
+  }
+
+  article {
+    padding: 30px;
+  }
+
+  .linkContent {
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+  }
+
+  a {
+    text-decoration: none;
+    color: #33371f;
+    display: flex;
+  }
+
+  span {
+    margin-left: 10px;
+  }
+
+  .card {
+    margin: 30px;
+    box-sizing: border-box;
+    box-shadow:
+      0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  }
+
+  .card img {
+    width: 100%;
+    object-fit: cover;
+  }
 </style>
